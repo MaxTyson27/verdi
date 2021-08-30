@@ -1,0 +1,70 @@
+%grap-300{
+  font-family: 'GraphikLCG-Light';
+  font-weight: 300;
+}
+
+%grap-400{
+  font-family: 'GraphikLCG-Regular';
+  font-weight: 400;
+}
+
+%grap-500{
+  font-family: 'GraphikLCG-Medium';
+  font-weight: 500;
+}
+
+%grap-600{
+  font-family: 'GraphikLCG-Semibold';
+  font-weight: 600;
+}
+
+@mixin fz($f, $c, $l){
+  font-size: $f;
+  color: $c;
+  line-height: $l;
+}
+
+@mixin bg ($path, $size) {
+  background-image: url($path);
+  background-repeat: no-repeat;
+  background-size: $size;
+}
+
+
+
+// Флексы
+@mixin flex-c () {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@mixin flex-bt () {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+@mixin flex-column ($align: center) {
+	display: flex;
+	flex-direction: column;
+	align-items: $align;
+}
+
+// Центрирование элемента внутри блока
+@mixin center-item ($position: absolute) {
+	position: $position; 
+	top: 50%; 
+	left: 50%; 
+	transform: translate(-50%, -50%);
+}
+@mixin center-item-y ($position: absolute) {
+	position: $position;
+	top: 50%; 
+	transform: translateY(-50%);
+};
+@mixin center-item-x ($position: absolute) {
+	position: $position;
+	left: 50%; 
+	transform: translateX(-50%);
+};

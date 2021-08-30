@@ -1,4 +1,22 @@
 
 body{
+  @extend %grap-300;
+  font-size: 16px;
+  color: #fff;
+}
 
+.wrapper {
+  width: 100%;
+  min-height: 100%;  
+  overflow: hidden;
+}
+
+.container{
+  max-width: 1130px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+a{
+  color: inherit;
 }
