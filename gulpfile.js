@@ -32,6 +32,9 @@ function styles() {
 function scripts() {
   return src([
     'node_modules/jquery/dist/jquery.js',
+    'node_modules/slick-carousel/slick/slick.js',
+    'node_modules/lightbox2/dist/js/lightbox.js',
+    'node_modules/inputmask/dist/jquery.inputmask.js',
     'app/js/main.js'
   ])
     .pipe(concat('main.min.js'))
@@ -42,23 +45,24 @@ function scripts() {
 
 function images() {
   return src('app/images/**/*.*')
-    .pipe(imagemin([
-      imagemin.gifsicle({ interlaced: true }),
-      imagemin.mozjpeg({ quality: 75, progressive: true }),
-      imagemin.optipng({ optimizationLevel: 5 }),
-      imagemin.svgo({
-        plugins: [
-          { removeViewBox: true },
-          { cleanupIDs: false }
-        ]
-      })
-    ]))
+    // .pipe(imagemin([
+    //   imagemin.gifsicle({ interlaced: true }),
+    //   imagemin.mozjpeg({ quality: 75, progressive: true }),
+    //   imagemin.optipng({ optimizationLevel: 5 }),
+    //   imagemin.svgo({
+    //     plugins: [
+    //       { removeViewBox: true },
+    //       { cleanupIDs: false }
+    //     ]
+    //   })
+    // ]))
     .pipe(dest('dist/images'))
 }
 
 function build() {
   return src([
     'app/**/*.html',
+    'app/**/*.php',
     'app/css/style.min.css',
     'app/js/main.min.js',
     'app/fonts/**.*',
